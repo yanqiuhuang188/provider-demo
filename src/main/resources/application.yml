@@ -1,0 +1,50 @@
+server:
+  port: ${nimble.server.port}
+
+spring:
+  application:
+    # the name can not include lower cross line
+    name: ${nimble.spring.application.name}
+
+  datasource:
+    platform: ${nimble.spring.datasource.platform}
+    driver-class-name: com.mysql.jdbc.Driver
+    url: ${nimble.spring.datasource.url}
+    username: ${nimble.spring.datasource.username}
+    password: ${nimble.spring.datasource.password}
+    root: ${nimble.spring.datasource.root}
+    schema: ${nimble.spring.datasource.schema}
+    data: ${nimble.spring.datasource.data}
+
+#  h2:
+#    console:
+#      enabled: ${nimble.spring.h2.console.enabled}
+#      path: ${nimble.spring.h2.console.path}
+#      settings:
+#        web-allow-others: ${nimble.spring.h2.console.settings.web-allow-others}
+
+  jpa:
+    database: ${nimble.spring.jpa.database}
+    database-platform: ${nimble.spring.jpa.database-platform}
+    generate-ddl: ${nimble.spring.jpa.generate-ddl}
+    show-sql: ${nimble.spring.jpa.show-sql}
+    hibernate:
+      ddl-auto: ${nimble.spring.jpa.hibernate.ddl-auto}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${nimble.eureka.client.service-url.defaultZone}
+    should-unregister-on-shutdown: true
+  instance:
+    hostname: ${nimble.eureka.instance.hostname}
+    instance-id: ${nimble.eureka.instance.instance-id}
+
+logging:
+  level:
+    root: ${nimble.logging.level.root}
+    org.hibernate: ${nimble.logging.level.org.hibernate}
+    org.hibernate.type.descriptor.sql.BasicBinder: ${nimble.logging.level.org.hibernate.type.descriptor.sql.BasicBinder}
+    org.hibernate.type.descriptor.sql.BasicExtractor: ${nimble.logging.level.org.hibernate.type.descriptor.sql.BasicExtractor}
+
+#    com.xxxx.xxxx: DEBUG
