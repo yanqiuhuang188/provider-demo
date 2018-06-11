@@ -39,6 +39,8 @@ eureka:
   instance:
     hostname: ${nimble.eureka.instance.hostname}
     instance-id: ${nimble.eureka.instance.instance-id}
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 3
 
 logging:
   level:

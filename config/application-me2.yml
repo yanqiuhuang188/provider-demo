@@ -1,6 +1,6 @@
 nimble:
   server:
-    port: 7921
+    port: 7922
 
   spring:
     application:
