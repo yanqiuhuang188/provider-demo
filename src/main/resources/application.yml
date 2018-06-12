@@ -39,8 +39,8 @@ eureka:
   instance:
     hostname: ${nimble.eureka.instance.hostname}
     instance-id: ${nimble.eureka.instance.instance-id}
-    lease-expiration-duration-in-seconds: 15
-    lease-renewal-interval-in-seconds: 3
+#    lease-expiration-duration-in-seconds: 15
+#    lease-renewal-interval-in-seconds: 3
 
 logging:
   level:
@@ -48,5 +48,10 @@ logging:
     org.hibernate: ${nimble.logging.level.org.hibernate}
     org.hibernate.type.descriptor.sql.BasicBinder: ${nimble.logging.level.org.hibernate.type.descriptor.sql.BasicBinder}
     org.hibernate.type.descriptor.sql.BasicExtractor: ${nimble.logging.level.org.hibernate.type.descriptor.sql.BasicExtractor}
+
+management:
+  endpoint:
+    features:
+      enabled: true
 
 #    com.xxxx.xxxx: DEBUG
