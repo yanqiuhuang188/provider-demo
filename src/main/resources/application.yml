@@ -48,10 +48,3 @@ logging:
     org.hibernate: ${nimble.logging.level.org.hibernate}
     org.hibernate.type.descriptor.sql.BasicBinder: ${nimble.logging.level.org.hibernate.type.descriptor.sql.BasicBinder}
     org.hibernate.type.descriptor.sql.BasicExtractor: ${nimble.logging.level.org.hibernate.type.descriptor.sql.BasicExtractor}
-
-management:
-  endpoint:
-    features:
-      enabled: true
-
-#    com.xxxx.xxxx: DEBUG
