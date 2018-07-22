@@ -1,0 +1,52 @@
+server:
+  port: 7924
+
+spring:
+  application:
+    name: provider
+
+  datasource:
+    platform: h2
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;MODE=MySql;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    schema: classpath:database/schema/*.sql
+    data: classpath:database/data/*.sql
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+# create----每次运行该程序，没有表格会新建表格，表内有数据会清空
+# create-drop----每次程序结束的时候会清空表
+# update----每次运行程序，没有表格会新建表格，表内有数据不会清空，只会更新
+# validate----运行程序会校验数据与数据库的字段类型是否相同，不同会报错
+
+  h2:
+    console:
+      enabled: true
+      path: '/h2'
+      settings:
+        web-allow-others: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7901/eureka,http://eureka2:7902/eureka
+    enabled: false
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${server.port}
+
+logging:
+  level:
+    root: info
+    org.hibernate: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+#   com.xxxx.xxxx: DEBUG
